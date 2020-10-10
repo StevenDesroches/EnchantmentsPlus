@@ -6,7 +6,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 import de.geolykt.enchantments_plus.Storage;
-import org.bukkit.event.entity.ProjectileHitEvent;
 
 import java.util.*;
 
