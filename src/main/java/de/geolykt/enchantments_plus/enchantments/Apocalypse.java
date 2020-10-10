@@ -3,6 +3,7 @@ package de.geolykt.enchantments_plus.enchantments;
 import org.bukkit.entity.Player;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.event.entity.EntityShootBowEvent;
@@ -24,7 +25,7 @@ public class Apocalypse extends CustomEnchantment {
             .maxLevel(1)
             .loreName("Apocalypse")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting()
             .description("Unleashes hell")
             .cooldown(0)

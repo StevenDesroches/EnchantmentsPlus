@@ -15,8 +15,7 @@ import de.geolykt.enchantments_plus.enums.Hand;
 import de.geolykt.enchantments_plus.enums.Tool;
 import de.geolykt.enchantments_plus.util.Utilities;
 
-import static de.geolykt.enchantments_plus.enums.Tool.BOW;
-import static de.geolykt.enchantments_plus.enums.Tool.SWORD;
+import static de.geolykt.enchantments_plus.enums.Tool.*;
 import static org.bukkit.potion.PotionEffectType.BLINDNESS;
 
 public class Reaper extends CustomEnchantment {
@@ -29,7 +28,7 @@ public class Reaper extends CustomEnchantment {
             .maxLevel(4)
             .loreName("Reaper")
             .probability(0)
-            .enchantable(new Tool[]{BOW, SWORD})
+            .enchantable(new Tool[]{BOW, SWORD, CROSSBOW})
             .conflicting()
             .description("Gives the target temporary wither effect and blindness")
             .cooldown(0)

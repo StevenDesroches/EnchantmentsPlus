@@ -1,6 +1,7 @@
 package de.geolykt.enchantments_plus.enchantments;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class Firestorm extends CustomEnchantment {
             .maxLevel(3)
             .loreName("Firestorm")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting(Blizzard.class)
             .description("Spawns a firestorm where the arrow strikes burning nearby entities")
             .cooldown(0)

@@ -47,6 +47,7 @@ public enum BaseEnchantments {
     MYSTERY_FISH,
     NETHER_STEP,
     NIGHT_VISION,
+    PENETRATING,
     PERSEPHONE,
     PIERCE,
     PLOUGH,

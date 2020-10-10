@@ -26,7 +26,7 @@ public class Level extends CustomEnchantment {
                 .maxLevel(3)
                 .loreName("Level")
                 .probability(0)
-                .enchantable(new Tool[]{PICKAXE, SWORD, BOW})
+                .enchantable(new Tool[]{PICKAXE, SWORD, BOW, CROSSBOW})
                 .conflicting()
                 .description("Drops more XP when killing mobs or mining ores")
                 .cooldown(0)

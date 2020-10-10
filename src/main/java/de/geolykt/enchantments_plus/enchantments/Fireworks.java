@@ -1,6 +1,7 @@
 package de.geolykt.enchantments_plus.enchantments;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class Fireworks extends CustomEnchantment {
             .maxLevel(4)
             .loreName("Fireworks")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting()
             .description("Shoots arrows that burst into fireworks upon impact")
             .cooldown(0)

@@ -1,6 +1,7 @@
 package de.geolykt.enchantments_plus.enchantments;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class Fuse extends CustomEnchantment {
             .maxLevel(1)
             .loreName("Fuse")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting()
             .description("Instantly ignites anything explosive")
             .cooldown(0)

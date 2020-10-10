@@ -1,6 +1,7 @@
 package de.geolykt.enchantments_plus.enchantments;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class Blizzard extends CustomEnchantment {
             .maxLevel(3)
             .loreName("Blizzard")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW,CROSSBOW})
             .conflicting(Firestorm.class)
             .description("Spawns a blizzard where the arrow strikes freezing nearby entities")
             .cooldown(0)

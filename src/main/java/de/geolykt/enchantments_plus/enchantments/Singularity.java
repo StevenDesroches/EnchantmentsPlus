@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 import static org.bukkit.GameMode.CREATIVE;
 
 public class Singularity extends CustomEnchantment {
@@ -33,7 +34,7 @@ public class Singularity extends CustomEnchantment {
             .maxLevel(1)
             .loreName("Singularity")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting()
             .description("Creates a black hole that attracts nearby entities and then discharges them")
             .cooldown(0)

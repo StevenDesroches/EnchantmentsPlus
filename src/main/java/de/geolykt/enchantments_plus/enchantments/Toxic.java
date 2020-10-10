@@ -20,8 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static de.geolykt.enchantments_plus.enums.Tool.BOW;
-import static de.geolykt.enchantments_plus.enums.Tool.SWORD;
+import static de.geolykt.enchantments_plus.enums.Tool.*;
 import static org.bukkit.potion.PotionEffectType.CONFUSION;
 import static org.bukkit.potion.PotionEffectType.HUNGER;
 
@@ -37,7 +36,7 @@ public class Toxic extends CustomEnchantment {
             .maxLevel(4)
             .loreName("Toxic")
             .probability(0)
-            .enchantable(new Tool[]{BOW, SWORD})
+            .enchantable(new Tool[]{BOW, SWORD, CROSSBOW})
             .conflicting()
             .description("Sickens the target, making them nauseous and unable to eat")
             .cooldown(0)

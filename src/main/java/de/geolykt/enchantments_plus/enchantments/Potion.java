@@ -1,6 +1,7 @@
 package de.geolykt.enchantments_plus.enchantments;
 
 import static de.geolykt.enchantments_plus.enums.Tool.BOW;
+import static de.geolykt.enchantments_plus.enums.Tool.CROSSBOW;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -25,7 +26,7 @@ public class Potion extends CustomEnchantment {
             .maxLevel(3)
             .loreName("Potion")
             .probability(0)
-            .enchantable(new Tool[]{BOW})
+            .enchantable(new Tool[]{BOW, CROSSBOW})
             .conflicting()
             .description("Gives the shooter random positive potion effects when attacking")
             .cooldown(0)
