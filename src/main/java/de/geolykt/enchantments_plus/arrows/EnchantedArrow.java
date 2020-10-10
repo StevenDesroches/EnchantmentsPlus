@@ -6,6 +6,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 import de.geolykt.enchantments_plus.Storage;
+import org.bukkit.event.entity.ProjectileHitEvent;
 
 import java.util.*;
 
@@ -22,6 +23,7 @@ public class EnchantedArrow {
     protected final Arrow arrow;
     protected final int level;
     protected final double power;
+    protected int pierce;
     private int tick;
 
     private static final Set<EnchantedArrow> dieQueue = new HashSet<>();
@@ -38,6 +40,7 @@ public class EnchantedArrow {
         this.arrow = arrow;
         this.level = level;
         this.power = power;
+        this.pierce = (arrow.getPierceLevel() != 0 ? arrow.getPierceLevel() + 1 : 0);
     }
 
     /**
@@ -76,9 +79,15 @@ public class EnchantedArrow {
     protected void die() {
         die(true);
     }
-        // Called when the arrow has finished any functionality
+
+    // Called when the arrow has finished any functionality
     protected void die(boolean removeArrow) {
+        if (pierce > 0) {
+            pierce--;
+            return;
+        }
         onDie();
+
         if (removeArrow) {
             arrow.remove();
         }
@@ -101,6 +110,7 @@ public class EnchantedArrow {
     }
 
     //region Getters
+
     /**
      * @return Ticks since arrow was created.
      */
@@ -122,7 +132,14 @@ public class EnchantedArrow {
         return power;
     }
 
-//    /**
+    /**
+     * @return Power of pierce on this arrow.
+     */
+    public int getPierce() {
+        return pierce;
+    }
+
+    //    /**
 //     * @return Current location of this arrow.
 //     */
 //    public Location getLocation() {
@@ -145,11 +162,12 @@ public class EnchantedArrow {
     //endregion
     //region Events
     // Called when the player shoots an arrow of this type
+
     /**
      * Called when an arrow of this type is launched.
      *
      * @param player Player launching the arrow.
-     * @param lore List of lore attached to this arrow.
+     * @param lore   List of lore attached to this arrow.
      */
     public void onLaunch(LivingEntity player, List<String> lore) {
     }
@@ -164,6 +182,7 @@ public class EnchantedArrow {
      * Called when this arrow impacts a block.
      */
     public void onImpact() {
+        pierce = 0;
         die(true);
     }
 
@@ -179,7 +198,6 @@ public class EnchantedArrow {
      * Called when this arrow impacts another entity.
      *
      * @param evt Event concerning entity impacted.
-     *
      * @return true iff impact successful and should deal damage.
      */
     public boolean onImpact(EntityDamageByEntityEvent evt) {

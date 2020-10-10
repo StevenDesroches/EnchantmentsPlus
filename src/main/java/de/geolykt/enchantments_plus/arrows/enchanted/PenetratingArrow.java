@@ -11,7 +11,7 @@ public class PenetratingArrow extends EnchantedArrow {
     }
 
     public boolean onImpact(EntityDamageByEntityEvent evt) {
-        evt.setDamage((evt.getDamage() * (1.25 * (level + 1))));
+        evt.setDamage(evt.getDamage() + (evt.getDamage() * ((float)(0.25 * (level + 1)))));
         die();
         return true;
     }

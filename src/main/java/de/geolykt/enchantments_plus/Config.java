@@ -422,6 +422,7 @@ public class Config {
         REGISTERED_ENCHANTMENTS.add(MysteryFish.class);
         REGISTERED_ENCHANTMENTS.add(NetherStep.class);
         REGISTERED_ENCHANTMENTS.add(NightVision.class);
+        REGISTERED_ENCHANTMENTS.add(Penetrating.class);
         REGISTERED_ENCHANTMENTS.add(Persephone.class);
         REGISTERED_ENCHANTMENTS.add(Pierce.class);
         REGISTERED_ENCHANTMENTS.add(Plough.class);

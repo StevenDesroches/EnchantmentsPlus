@@ -290,6 +290,13 @@ enchantments:
       Max Level: 1
       Cooldown: 0
       Power: 1.0
+  - Penetrating:
+        Probability: 1.0
+        Tools: Crossbow
+        Name: Penetrating
+        Max Level: 5
+        Cooldown: 0
+        Power: 1.0
   - Persephone:
       Probability: 1.0
       Tools: Hoe

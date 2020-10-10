@@ -20,10 +20,12 @@ public class WatcherArrow implements Listener {
     // Called when an arrow hits a block
     @EventHandler
     public boolean impact(ProjectileHitEvent evt) {
-        if (EnchantedArrow.advancedProjectiles.containsKey(evt.getEntity())) {
-            Set<EnchantedArrow> ar = EnchantedArrow.advancedProjectiles.get(evt.getEntity());
-            for (EnchantedArrow a : ar) {
-                a.onImpact();
+        if (evt.getHitBlock() != null) {
+            if (EnchantedArrow.advancedProjectiles.containsKey(evt.getEntity())) {
+                Set<EnchantedArrow> ar = EnchantedArrow.advancedProjectiles.get(evt.getEntity());
+                for (EnchantedArrow a : ar) {
+                    a.onImpact();
+                }
             }
         }
         return true;
@@ -41,7 +43,9 @@ public class WatcherArrow implements Listener {
                             evt.setDamage(0);
                         }
                     }
-                    EnchantedArrow.advancedProjectiles.remove(evt.getDamager());
+                    if (arrow.getPierce() <= 0) {
+                        EnchantedArrow.advancedProjectiles.remove(evt.getDamager());
+                    }
                     if (evt.getEntity() instanceof LivingEntity
                             && evt.getDamage() >= ((LivingEntity) evt.getEntity()).getHealth()) {
                         EnchantedArrow.killedEntities.put(evt.getEntity(), arrow);
